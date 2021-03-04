@@ -1,0 +1,54 @@
+let number1 = 5;
+let number2 = 6;
+let name1 = "Pablo";
+let name2 = "Osuna";
+
+function TableFive(number){
+  console.log("Multiplication table for" + number);
+  var counter = 1;
+
+  console.log(number + "x" + counter + "=" + number * counter);
+  counter++;
+
+   console.log(number + "x" + counter + "=" + number * counter);
+  counter++; 
+
+  console.log(number + "x" + counter + "=" + number * counter);
+  counter++; 
+
+  console.log(number + "x" + counter + "=" + number * counter);
+  counter++;
+
+   console.log(number + "x" + counter + "=" + number * counter);
+   counter++;
+}
+
+TableFive(number1)
+console.log()
+
+function operations(number){
+console.log("Math operations to number " + number);
+console.log("Number " + number);
+console.log("Double " + number * 2);
+console.log("Square Root " + Math.sqrt(number));
+}
+
+operations(number2)
+console.log()
+
+function flatter(name){
+  let flatter ="You are so intelligent, ";
+  console.log(flatter + name);
+  complement = "what beautiful eyes you have, ";
+  console.log(complement + name)
+}
+
+flatter(name1)
+console.log()
+
+function describe(name){
+  let description = " Sing very well, is tall, and he is black,";
+  console.log(name + description)
+}
+
+describe(name2);
