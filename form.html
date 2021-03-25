@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My form</title>
+	</head>
+	<body>
+		<h1 id="header">Fill this form</h1>
+		
+		<p id="name-error" style="display:none">Please, fill in your name.</p>
+		<p id="lastname-error" style="display:none">Please, fill in your last name.</p>
+		<p id="id-error" style="display:none">Please, fill in your ID.</p>
+		<p id="email-error" style="display:none">Please, fill in your email.</p>
+			
+		<form name="myForm">
+			<label for="fname">Name:</label><br>
+			<input type="text" id="name" name="name"><br>
+			<label for="fname">Last name:</label><br>
+			<input type="text" id="lastname" name="lastname"><br>
+			<label for="fname">ID:</label><br>
+			<input type="text" id="identification" name="identification"><br>
+			<label for="fname">Email:</label><br>
+			<input type="text" id="email" name="email"><br>
+			
+			<p><strong>Gender:</strong></p>
+			<input type="radio" name="fgender" value="female">
+			<label>Female</label><br>
+			<input type="radio" name="fgender" value="male">
+			<label>Male</label><br>
+			<input type="radio" name="fgender" value="other">
+			<label>Other</label><br>
+		</form>
+		
+		<br>
+		<button id="validate" onclick="validateForm()">Send</button>
+		<button id="autofill" onclick="autofillForm()">Auto-fill</button>
+		
+		<p id="success" style="display:none; color:green;">The form has been sent successfully!</p>
+		
+		<script>
+			/* Escriban el código aquí. */
+			document.getElementById("name-error").style.color="red";
+			document.getElementById("lastname-error").style.color="orange";
+			document.getElementById("id-error").style.color="yellow";
+			document.getElementById("email-error").style.color="blue";
+
+			function validateForm() {
+				var name = document.forms["myForm"]["name"].value;
+
+				if (name == "") {
+				  document.getElementById("name-error").style.display="block";
+				  return false;
+				}
+				else {
+					document.getElementById("name-error").style.display="none";
+				}
+
+				var name = document.forms["myForm"]["lastname"].value;
+
+				if (name == "") {
+				  document.getElementById("lastname-error").style.display="block";
+				  return false;
+				}
+				else {
+					document.getElementById("lastname-error").style.display="none";
+				}
+
+				var name = document.forms["myForm"]["identification"].value;
+
+				if (name == "") {
+				  document.getElementById("id-error").style.display="block";
+				  return false;
+				}
+				else {
+					document.getElementById("id-error").style.display="none";
+				}
+
+				var name = document.forms["myForm"]["email"].value;
+
+				if (name == "") {
+				  document.getElementById("email-error").style.display="block";
+				  return false;
+				}
+				else {
+					document.getElementById("email-error").style.display="none";
+				}
+
+				successful1();
+
+			}
+			
+			function autofillForm() {
+				document.forms["myForm"]["name"].value = "Florencio";
+				document.forms["myForm"]["lastname"].value = "Guzmán";
+				document.forms["myForm"]["identification"].value = "01234";
+				document.forms["myForm"]["email"].value = "testing12@gmail.com";
+			}
+
+			function successful1() {
+				document.getElementById("validate").style.display="none";
+				document.getElementById("autofill").style.display="none";
+				document.getElementById("success").style.display="block"
+			}
+
+		</script>
+	</body>
+</html>
