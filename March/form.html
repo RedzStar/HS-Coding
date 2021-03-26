@@ -10,6 +10,7 @@
 		<p id="lastname-error" style="display:none">Please, fill in your last name.</p>
 		<p id="id-error" style="display:none">Please, fill in your ID.</p>
 		<p id="email-error" style="display:none">Please, fill in your email.</p>
+		<p id="gender-error" style="display:none">Please, fill in your gender.</p>
 			
 		<form name="myForm">
 			<label for="fname">Name:</label><br>
@@ -42,6 +43,7 @@
 			document.getElementById("lastname-error").style.color="orange";
 			document.getElementById("id-error").style.color="yellow";
 			document.getElementById("email-error").style.color="blue";
+			document.getElementById("gender-error").style.color="pink";
 
 			function validateForm() {
 				var name = document.forms["myForm"]["name"].value;
@@ -82,6 +84,15 @@
 				}
 				else {
 					document.getElementById("email-error").style.display="none";
+				}
+				
+				var name = document.forms["MyForm"]["fgender].value;
+				if (name == "") {
+				  document.getElementById("gender-error").style.display="block";
+				  return false;
+				}
+				else {
+					document.getElementById("gender-error").style.display="none";
 				}
 
 				successful1();
